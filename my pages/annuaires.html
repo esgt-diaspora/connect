@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Annuaire - ESGT Diaspora</title>
+  <!-- Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet.js JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"
+    integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Leaflet.js search plugin CSS -->
+  <script src="https://unpkg.com/leaflet-search@2.9.8/dist/leaflet-search.src.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.9.8/dist/leaflet-search.min.css" />
+  <!-- Leaflet.js markers cluster plugin -->
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../annuaire.js" defer></script>
+</head>
+
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-logo">
+        <a href="about.html">
+            <img src="../picture/Logo_ESGTD.JPG" alt="ESGT Diaspora">
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="annuaires.html" class="active">Annuaire</a>
+        <a href="companies.html">Entreprises</a>
+        <!-- <a href="../index.html">Login</a> -->
+    </div>
+  </nav>
+
+  <!-- Title Section -->
+  <div class="title-container">
+    <h1>Annuaire des Membres</h1>
+    <div class="filter-buttons">
+      <select id="posteFilter">
+        <option value="">Chercher par Poste</option>
+      </select>
+      <select id="villeFilter">
+        <option value="">Chercher par Ville</option>
+      </select>
+      <select id="promoFilter">
+        <option value="">Chercher par Promotion</option>
+      </select>
+      <button id="resetFilters" class="reset-button">
+        <i class="fas fa-undo"></i>
+        Réinitialiser les filtres
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Main Content -->
+  <div id="wrapper">
+    <div id="sidebar">
+      <h3>Liste des membres</h3>
+      <ul id="memberList">
+        <!-- Members will be listed here -->
+      </ul>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <!-- Footer -->
+
+  <!-- Stats Summary Section -->
+  <div class="stats-summary">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value" id="totalMembers">0</div>
+            <div class="stat-label">Nombre de Membres</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="totalPromos">0</div>
+            <div class="stat-label">Promotions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="totalCities">0</div>
+            <div class="stat-label">Nombre de Villes</div>
+        </div>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="bottom-content">
+        <div class="bottom-logo-section">
+            <img src="../picture/Logo_ESGTD.JPG" alt="ESGT Diaspora">
+            <p>Connecter pour plus de diversité</p>
+        </div>
+        <div class="bottom-links">
+            <div class="bottom-links-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="annuaires.html">Annuaire</a></li>
+                    <li><a href="companies.html">Entreprises</a></li>
+                </ul>
+            </div>
+            <div class="bottom-links-column">
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#">Évènements</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-contact-section">
+            <div class="contact-links">
+                <a href="mailto:diasporaesgt@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>diasporaesgt@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/company/esgt-diaspora" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>ESGT Diaspora</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
